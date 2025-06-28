@@ -1,0 +1,250 @@
+2025-06-28 21:06:37,724 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 21:06:37,725 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 21:06:37,725 - INFO - base - Scheduler started
+2025-06-28 21:06:37,726 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 21:06:37,726 - INFO - app - Starting Flask application.
+2025-06-28 21:06:37,729 - INFO - _internal - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-28 21:06:37,729 - INFO - _internal - [33mPress CTRL+C to quit[0m
+2025-06-28 21:06:57,970 - INFO - _internal - 127.0.0.1 - - [28/Jun/2025 21:06:57] "GET / HTTP/1.1" 200 -
+2025-06-28 21:06:59,356 - ERROR - app - Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "/Users/joelsachin/Documents/phishing_detector/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/joelsachin/Documents/phishing_detector/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/joelsachin/Documents/phishing_detector/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/joelsachin/Documents/phishing_detector/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/joelsachin/Documents/phishing_detector/app.py", line 35, in dashboard
+    return render_template('dashboard.html', alerts=alerts)
+                                                    ^^^^^^
+NameError: name 'alerts' is not defined
+2025-06-28 21:06:59,359 - INFO - _internal - 127.0.0.1 - - [28/Jun/2025 21:06:59] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-06-28 21:08:25,727 - ERROR - app - Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "/Users/joelsachin/Documents/phishing_detector/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/joelsachin/Documents/phishing_detector/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/joelsachin/Documents/phishing_detector/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/joelsachin/Documents/phishing_detector/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/joelsachin/Documents/phishing_detector/app.py", line 35, in dashboard
+    return render_template('index.html', report="Error: Invalid URL provided.")
+                                            ^^^^^^
+NameError: name 'alerts' is not defined
+2025-06-28 21:08:25,729 - INFO - _internal - 127.0.0.1 - - [28/Jun/2025 21:08:25] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-06-28 21:09:37,943 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 21:09:37,944 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 21:09:37,944 - INFO - base - Scheduler started
+2025-06-28 21:09:37,945 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 21:09:37,945 - INFO - app - Starting Flask application.
+2025-06-28 21:09:37,948 - INFO - _internal - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-28 21:09:37,948 - INFO - _internal - [33mPress CTRL+C to quit[0m
+2025-06-28 21:09:47,815 - INFO - _internal - 127.0.0.1 - - [28/Jun/2025 21:09:47] "GET /dashboard HTTP/1.1" 200 -
+2025-06-28 21:11:36,991 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 21:11:36,992 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 21:11:36,992 - INFO - base - Scheduler started
+2025-06-28 21:11:36,992 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 21:11:36,992 - INFO - app - Starting Flask application.
+2025-06-28 21:11:36,995 - INFO - _internal - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-28 21:11:36,996 - INFO - _internal - [33mPress CTRL+C to quit[0m
+2025-06-28 21:11:52,702 - INFO - monitor - Simulating a full HIGH-RISK domain alert for testing...
+2025-06-28 21:11:52,702 - INFO - monitor - Adding test alert for 'my-apple-secure-test.com'
+2025-06-28 21:11:52,705 - INFO - _internal - 127.0.0.1 - - [28/Jun/2025 21:11:52] "[32mGET /test-alert HTTP/1.1[0m" 302 -
+2025-06-28 21:11:52,729 - INFO - _internal - 127.0.0.1 - - [28/Jun/2025 21:11:52] "GET /dashboard HTTP/1.1" 200 -
+2025-06-28 21:11:55,347 - INFO - _internal - 127.0.0.1 - - [28/Jun/2025 21:11:55] "GET /dashboard HTTP/1.1" 200 -
+2025-06-28 21:11:57,519 - INFO - _internal - 127.0.0.1 - - [28/Jun/2025 21:11:57] "GET /dashboard HTTP/1.1" 200 -
+2025-06-28 21:11:58,456 - INFO - _internal - 127.0.0.1 - - [28/Jun/2025 21:11:58] "GET / HTTP/1.1" 200 -
+2025-06-28 21:11:59,775 - INFO - _internal - 127.0.0.1 - - [28/Jun/2025 21:11:59] "GET /dashboard HTTP/1.1" 200 -
+2025-06-28 21:27:57,292 - WARNING - base - Run time of job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 21:21:36 IST)" was missed by 0:06:20.300917
+2025-06-28 16:37:37,462 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 16:37:37,462 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 16:37:37,463 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 16:37:37,464 - INFO - base - Scheduler started
+2025-06-28 16:37:37,464 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 16:37:37,465 - INFO - base - Scheduler started
+2025-06-28 16:37:37,466 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 16:37:37,467 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 17:12:14,870 - WARNING - base - Run time of job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 16:47:37 UTC)" was missed by 0:04:37.407614
+2025-06-28 17:12:14,878 - WARNING - base - Run time of job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 16:47:37 UTC)" was missed by 0:04:37.415295
+2025-06-28 17:12:15,940 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 17:12:15,940 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 17:12:15,941 - INFO - base - Scheduler started
+2025-06-28 17:12:15,942 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 17:39:10,521 - WARNING - base - Run time of job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 17:22:15 UTC)" was missed by 0:06:54.581826
+2025-06-28 17:39:10,521 - WARNING - base - Run time of job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 17:47:37 UTC)" was missed by 0:01:33.059081
+2025-06-28 17:39:11,319 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 17:39:11,320 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 17:39:11,320 - INFO - base - Scheduler started
+2025-06-28 17:39:11,322 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 17:54:57,297 - WARNING - base - Run time of job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 18:02:15 UTC)" was missed by 0:02:41.357150
+2025-06-28 17:54:57,307 - WARNING - base - Run time of job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 17:49:11 UTC)" was missed by 0:05:45.987584
+2025-06-28 17:54:58,087 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 17:54:58,087 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 17:54:58,088 - INFO - base - Scheduler started
+2025-06-28 17:54:58,089 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 17:59:11,356 - INFO - base - Running job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 18:09:11 UTC)" (scheduled at 2025-06-28 17:59:11.319644+00:00)
+2025-06-28 17:59:11,358 - INFO - monitor - Starting scheduled monitoring task...
+2025-06-28 17:59:11,359 - INFO - monitor - Fetching new domains from Certificate Transparency logs...
+2025-06-28 17:59:28,044 - INFO - monitor - Found 2620 unique domains to analyze.
+2025-06-28 17:59:28,049 - WARNING - monitor - Suspicious domain name found: ilovesnapple.com (Similar to apple.com)
+2025-06-28 17:59:30,175 - INFO - monitor - Checking ilovesnapple.com with Google Safe Browse...
+2025-06-28 17:59:30,700 - WARNING - monitor - Suspicious domain name found: casebook.com (Similar to facebook.com)
+2025-06-28 17:59:53,725 - INFO - monitor - Checking casebook.com with Google Safe Browse...
+2025-06-28 17:59:54,148 - WARNING - monitor - Suspicious domain name found: franklinsynergybank.com (Similar to mybank.com)
+2025-06-28 18:00:10,976 - INFO - monitor - Checking franklinsynergybank.com with Google Safe Browse...
+2025-06-28 18:00:11,453 - WARNING - monitor - Suspicious domain name found: googlestore.com (Similar to google.com)
+2025-06-28 18:00:14,872 - INFO - monitor - Checking googlestore.com with Google Safe Browse...
+2025-06-28 18:00:15,343 - WARNING - monitor - Suspicious domain name found: applyweb.com (Similar to apple.com)
+2025-06-28 18:00:35,234 - INFO - monitor - Checking applyweb.com with Google Safe Browse...
+2025-06-28 18:00:35,620 - WARNING - monitor - Suspicious domain name found: amazonaws.com (Similar to amazon.com)
+2025-06-28 18:00:43,703 - INFO - monitor - Checking amazonaws.com with Google Safe Browse...
+2025-06-28 18:00:44,074 - WARNING - monitor - Suspicious domain name found: texassecuritybank.com (Similar to mybank.com)
+2025-06-28 18:00:58,370 - INFO - monitor - Successfully fetched content from texassecuritybank.com
+2025-06-28 18:00:58,416 - WARNING - monitor - !! Found phishing keywords in texassecuritybank.com: ['account', 'security']
+2025-06-28 18:00:58,417 - INFO - monitor - Taking screenshot of texassecuritybank.com...
+2025-06-28 18:01:21,292 - WARNING - selenium_manager - Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)
+2025-06-28 18:01:21,443 - ERROR - monitor - Could not take screenshot for texassecuritybank.com: Error taking screenshot: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+#0 0x55594524126a <unknown>
+#1 0x555944cebab0 <unknown>
+#2 0x555944d268ac <unknown>
+#3 0x555944d21307 <unknown>
+#4 0x555944d71696 <unknown>
+#5 0x555944d70d56 <unknown>
+#6 0x555944d62f73 <unknown>
+#7 0x555944d2faeb <unknown>
+#8 0x555944d30751 <unknown>
+#9 0x555945205b7b <unknown>
+#10 0x555945209959 <unknown>
+#11 0x5559451ec959 <unknown>
+#12 0x55594520a518 <unknown>
+#13 0x5559451d110f <unknown>
+#14 0x55594522e918 <unknown>
+#15 0x55594522eaf6 <unknown>
+#16 0x555945240586 <unknown>
+#17 0x7f6c3d1841f5 <unknown>
+
+2025-06-28 18:01:21,444 - INFO - monitor - Checking texassecuritybank.com with Google Safe Browse...
+2025-06-28 18:01:21,907 - WARNING - monitor - Suspicious domain name found: mybankingservices.com (Similar to mybank.com)
+2025-06-28 18:16:21,338 - ERROR - whois - Error trying to connect to socket: closing socket - timed out
+2025-06-28 18:16:21,340 - WARNING - base - Run time of job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 18:04:58 UTC)" was missed by 0:01:23.252878
+2025-06-28 18:16:21,338 - WARNING - base - Execution of job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 18:09:11 UTC)" skipped: maximum number of running instances reached (1)
+2025-06-28 18:16:36,374 - INFO - monitor - Checking mybankingservices.com with Google Safe Browse...
+2025-06-28 18:16:36,916 - WARNING - monitor - Suspicious domain name found: google.com (Similar to google.com)
+2025-06-28 18:16:39,488 - INFO - monitor - Checking google.com with Google Safe Browse...
+2025-06-28 18:16:39,909 - WARNING - monitor - Suspicious domain name found: payu.com (Similar to paypal.com)
+2025-06-28 18:16:53,374 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 18:16:53,386 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 18:16:53,389 - INFO - base - Scheduler started
+2025-06-28 18:16:53,396 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 19:11:37,461 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 19:11:37,461 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 19:11:37,462 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 19:11:37,462 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 19:11:37,463 - INFO - base - Scheduler started
+2025-06-28 19:11:37,462 - INFO - base - Scheduler started
+2025-06-28 19:11:37,464 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 19:11:37,465 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.
+2025-06-28 19:21:37,479 - INFO - base - Running job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 19:21:37 UTC)" (scheduled at 2025-06-28 19:21:37.461073+00:00)
+2025-06-28 19:21:37,479 - INFO - base - Running job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 19:21:37 UTC)" (scheduled at 2025-06-28 19:21:37.461066+00:00)
+2025-06-28 19:21:37,480 - INFO - monitor - Starting scheduled monitoring task...
+2025-06-28 19:21:37,481 - INFO - monitor - Starting scheduled monitoring task...
+2025-06-28 19:21:37,481 - INFO - monitor - Fetching new domains from Certificate Transparency logs...
+2025-06-28 19:21:37,481 - INFO - monitor - Fetching new domains from Certificate Transparency logs...
+2025-06-28 19:21:43,230 - INFO - monitor - Found 2620 unique domains to analyze.
+2025-06-28 19:21:43,240 - WARNING - monitor - Suspicious domain name found: applesandovaries.com (Similar to apple.com)
+2025-06-28 19:21:45,931 - INFO - monitor - Checking applesandovaries.com with Google Safe Browse...
+2025-06-28 19:21:46,411 - WARNING - monitor - Suspicious domain name found: mybankingservices.com (Similar to mybank.com)
+2025-06-28 19:22:08,162 - ERROR - monitor - Error fetching domains from crt.sh: HTTPSConnectionPool(host='crt.sh', port=443): Read timed out. (read timeout=30)
+2025-06-28 19:22:08,162 - INFO - monitor - Found 0 unique domains to analyze.
+2025-06-28 19:22:08,162 - INFO - monitor - No new domains to analyze in this run.
+2025-06-28 19:22:08,163 - INFO - base - Job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 19:31:37 UTC)" executed successfully
+2025-06-28 19:22:15,011 - INFO - monitor - Checking mybankingservices.com with Google Safe Browse...
+2025-06-28 19:22:15,379 - WARNING - monitor - Suspicious domain name found: paypal.com (Similar to paypal.com)
+2025-06-28 19:22:32,966 - INFO - monitor - Successfully fetched content from paypal.com
+2025-06-28 19:22:32,971 - WARNING - monitor - !! Found phishing keywords in paypal.com: ['security']
+2025-06-28 19:22:32,971 - INFO - monitor - Taking screenshot of paypal.com...
+2025-06-28 19:23:03,686 - WARNING - selenium_manager - Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)
+2025-06-28 19:23:03,847 - ERROR - monitor - Could not take screenshot for paypal.com: Error taking screenshot: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+#0 0x55a96adb426a <unknown>
+#1 0x55a96a85eab0 <unknown>
+#2 0x55a96a8998ac <unknown>
+#3 0x55a96a894307 <unknown>
+#4 0x55a96a8e4696 <unknown>
+#5 0x55a96a8e3d56 <unknown>
+#6 0x55a96a8d5f73 <unknown>
+#7 0x55a96a8a2aeb <unknown>
+#8 0x55a96a8a3751 <unknown>
+#9 0x55a96ad78b7b <unknown>
+#10 0x55a96ad7c959 <unknown>
+#11 0x55a96ad5f959 <unknown>
+#12 0x55a96ad7d518 <unknown>
+#13 0x55a96ad4410f <unknown>
+#14 0x55a96ada1918 <unknown>
+#15 0x55a96ada1af6 <unknown>
+#16 0x55a96adb3586 <unknown>
+#17 0x7fdbf591c1f5 <unknown>
+
+2025-06-28 19:23:03,847 - INFO - monitor - Checking paypal.com with Google Safe Browse...
+2025-06-28 19:23:04,469 - WARNING - monitor - Suspicious domain name found: google.com (Similar to google.com)
+2025-06-28 19:23:07,454 - INFO - monitor - Checking google.com with Google Safe Browse...
+2025-06-28 19:23:08,033 - WARNING - monitor - Suspicious domain name found: googlestore.com (Similar to google.com)
+2025-06-28 19:23:11,432 - INFO - monitor - Checking googlestore.com with Google Safe Browse...
+2025-06-28 19:23:11,909 - WARNING - monitor - Suspicious domain name found: payu.com (Similar to paypal.com)
+2025-06-28 19:23:30,419 - INFO - monitor - Checking payu.com with Google Safe Browse...
+2025-06-28 19:23:30,572 - WARNING - monitor - Suspicious domain name found: franklinsynergybank.com (Similar to mybank.com)
+2025-06-28 19:23:47,637 - INFO - monitor - Checking franklinsynergybank.com with Google Safe Browse...
+2025-06-28 19:23:48,007 - WARNING - monitor - Suspicious domain name found: applyweb.com (Similar to apple.com)
+2025-06-28 19:24:08,346 - INFO - monitor - Checking applyweb.com with Google Safe Browse...
+2025-06-28 19:24:08,744 - WARNING - monitor - Suspicious domain name found: apply2jobs.com (Similar to apple.com)
+2025-06-28 19:24:21,827 - INFO - monitor - Checking apply2jobs.com with Google Safe Browse...
+2025-06-28 19:24:22,230 - WARNING - monitor - Suspicious domain name found: microsoft.com (Similar to microsoft.com)
+2025-06-28 19:24:24,321 - INFO - monitor - Checking microsoft.com with Google Safe Browse...
+2025-06-28 19:24:24,799 - WARNING - monitor - Suspicious domain name found: amazonaws.com (Similar to amazon.com)
+2025-06-28 19:24:33,031 - INFO - monitor - Checking amazonaws.com with Google Safe Browse...
+2025-06-28 19:24:33,402 - WARNING - monitor - Suspicious domain name found: texassecuritybank.com (Similar to mybank.com)
+2025-06-28 19:24:48,263 - INFO - monitor - Successfully fetched content from texassecuritybank.com
+2025-06-28 19:24:48,349 - WARNING - monitor - !! Found phishing keywords in texassecuritybank.com: ['account', 'security']
+2025-06-28 19:24:48,349 - INFO - monitor - Taking screenshot of texassecuritybank.com...
+2025-06-28 19:24:48,460 - ERROR - monitor - Could not take screenshot for texassecuritybank.com: Error taking screenshot: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+#0 0x55e0d84a526a <unknown>
+#1 0x55e0d7f4fab0 <unknown>
+#2 0x55e0d7f8a8ac <unknown>
+#3 0x55e0d7f85307 <unknown>
+#4 0x55e0d7fd5696 <unknown>
+#5 0x55e0d7fd4d56 <unknown>
+#6 0x55e0d7fc6f73 <unknown>
+#7 0x55e0d7f93aeb <unknown>
+#8 0x55e0d7f94751 <unknown>
+#9 0x55e0d8469b7b <unknown>
+#10 0x55e0d846d959 <unknown>
+#11 0x55e0d8450959 <unknown>
+#12 0x55e0d846e518 <unknown>
+#13 0x55e0d843510f <unknown>
+#14 0x55e0d8492918 <unknown>
+#15 0x55e0d8492af6 <unknown>
+#16 0x55e0d84a4586 <unknown>
+#17 0x7f42cb1631f5 <unknown>
+
+2025-06-28 19:24:48,460 - INFO - monitor - Checking texassecuritybank.com with Google Safe Browse...
+2025-06-28 19:24:48,843 - WARNING - monitor - Suspicious domain name found: ilovesnapple.com (Similar to apple.com)
+2025-06-28 19:24:50,229 - INFO - monitor - Checking ilovesnapple.com with Google Safe Browse...
+2025-06-28 19:24:50,616 - WARNING - monitor - Suspicious domain name found: casebook.com (Similar to facebook.com)
+2025-06-28 19:25:04,033 - INFO - monitor - Checking casebook.com with Google Safe Browse...
+2025-06-28 19:25:04,454 - INFO - monitor - Scheduled monitoring task finished.
+2025-06-28 19:25:04,454 - INFO - base - Job "run_monitoring_task (trigger: interval[0:10:00], next run at: 2025-06-28 19:31:37 UTC)" executed successfully
+2025-06-28 21:10:00,885 - INFO - base - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-28 21:10:00,888 - INFO - base - Added job "run_monitoring_task" to job store "default"
+2025-06-28 21:10:00,889 - INFO - base - Scheduler started
+2025-06-28 21:10:00,889 - INFO - app - Scheduler started. Monitoring task will run every 10 minutes.

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Detector</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; background-color: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1, h2 { color: #333; }
+        nav { margin-bottom: 20px; } /* Added style for nav */
+        nav a { margin-right: 15px; text-decoration: none; color: #007bff; } /* Added style for nav links */
+        form { margin-bottom: 20px; }
+        input[type="text"] { width: 70%; padding: 8px; }
+        input[type="submit"] { padding: 8px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        pre { background-color: #eee; padding: 15px; border-radius: 4px; white-space: pre-wrap; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">On-Demand Analyzer</a>
+            <a href="/dashboard">Dashboard</a>
+        </nav>
+        <h1>AIML On-Demand Analyzer</h1>
+        <form method="post">
+            <label for="url">Enter URL to Analyze:</label><br><br>
+            <input type="text" id="url" name="url" size="50" required>
+            <input type="submit" value="Analyze">
+        </form>
+
+        {% if report %}
+        <h2>Analysis Report</h2>
+        <pre>{{ report }}</pre>
+        {% endif %}
+    </div>
+</body>
+</html>

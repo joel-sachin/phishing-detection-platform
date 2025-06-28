@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alerts Dashboard</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; background-color: #f4f4f9; color: #333; }
+        .container { max-width: 1200px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        nav { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ddd;}
+        nav a { margin-right: 15px; text-decoration: none; color: #007bff; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px 15px; border: 1px solid #ddd; text-align: left; word-wrap: break-word; }
+        th { background-color: #007bff; color: white; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        
+        .status-high-risk-phishing { background-color: #ffcdd2 !important; }
+        .status-suspicious { background-color: #fff9c4 !important; }
+
+        .gsb-threat { font-weight: bold; color: #c62828; }
+        .gsb-clean { color: #388e3c; }
+        .gsb-error { color: #757575; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">On-Demand Analyzer</a>
+            <a href="/dashboard">Dashboard</a>
+        </nav>
+        <h1>Alerts Dashboard</h1>
+        <p>This dashboard shows suspicious domains found by the continuous monitor.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Suspicious Domain</th>
+                    <th>Similar To</th>
+                    <th>Score</th>
+                    <th>Creation Date</th>
+                    <th>Status</th>
+                    <th>Keywords Found</th>
+                    <th>Screenshot</th>
+                    <th>Google Safe Browse</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if alerts %}
+                    {% for alert in alerts %}
+                    {# This block defensively creates the class name #}
+                    {% set status_class = (alert['status'] or '').lower().replace(' ', '-') %}
+                    <tr class="status-{{ status_class }}">
+                        <td>{{ alert['timestamp'] or 'N/A' }}</td>
+                        <td>{{ alert['domain'] or 'N/A' }}</td>
+                        <td>{{ alert['similar_to'] or 'N/A' }}</td>
+                        <td>{{ alert['similarity_score'] or '0' }}%</td>
+                        <td>{{ alert['creation_date'] or 'N/A' }}</td>
+                        <td>{{ alert['status'] or 'N/A' }}</td>
+                        <td>{{ alert['keywords_found'] or 'None' }}</td>
+                        <td>
+                            {# Check if the screenshot path exists and is not empty #}
+                            {% if alert['screenshot_path'] %}
+                            <a href="{{ url_for('serve_screenshot', filename=alert['screenshot_path'].split('/')[-1]) }}" target="_blank">
+                                View Image
+                            </a>
+                            {% else %}
+                            N/A
+                            {% endif %}
+                        </td>
+                        <td>
+                            {# Check if the gsb_status exists before using it #}
+                            {% set gsb_status = alert['gsb_status'] or 'N/A' %}
+                            {% if gsb_status == 'CLEAN' %}
+                                <span class="gsb-clean">{{ gsb_status }}</span>
+                            {% elif gsb_status == 'CHECK_ERROR' or gsb_status == 'N/A' %}
+                                <span class="gsb-error">{{ gsb_status }}</span>
+                            {% else %}
+                                <span class="gsb-threat">{{ gsb_status }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="9">No alerts found yet. The monitor is running in the background.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

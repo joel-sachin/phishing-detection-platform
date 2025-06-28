@@ -1,0 +1,11 @@
+python-whois
+dnspython
+beautifulsoup4
+requests
+validators
+Pillow
+selenium
+thefuzz
+Flask
+APScheduler
+gunicorn

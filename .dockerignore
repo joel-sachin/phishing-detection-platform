@@ -1,0 +1,16 @@
+# Ignore Python virtual environment
+venv/
+.venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore database file (we will manage this separately)
+alerts.db
+phishing_detector.log
+
+# Ignore IDE/editor-specific files
+.idea/
+.vscode/
